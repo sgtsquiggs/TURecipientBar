@@ -325,7 +325,7 @@ void *TURecipientsSelectionContext = &TURecipientsSelectionContext;
 		
 		if (_searching) {
 			self.scrollEnabled = NO;
-			_lineView.hidden = NO && _showsBottomBorder;
+			_lineView.hidden = !_showsBottomBorder;
 			_lineView.backgroundColor = [UIColor colorWithWhite:0.557 alpha:1.000];
 		} else {
 			_lineView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1.000];
