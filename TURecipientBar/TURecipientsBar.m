@@ -321,17 +321,21 @@ void *TURecipientsSelectionContext = &TURecipientsSelectionContext;
 			_lineView.hidden = NO && _showsBottomBorder;
 			_lineView.backgroundColor = [UIColor colorWithWhite:0.557 alpha:1.000];
 			
-			self.layer.shadowColor = [UIColor blackColor].CGColor;
-			self.layer.shadowOffset = CGSizeMake(0.0, 0.0);
-			self.layer.shadowOpacity = 0.5;
-			self.layer.shadowRadius = 5.0;
-			self.clipsToBounds = NO;
+			if (_showsShadows) {
+				self.layer.shadowColor = [UIColor blackColor].CGColor;
+				self.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+				self.layer.shadowOpacity = 0.5;
+				self.layer.shadowRadius = 5.0;
+				self.clipsToBounds = NO;
+			}
 		} else {
 			_lineView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1.000];
 			
-			self.layer.shadowOpacity = 0.0;
-			self.layer.shadowRadius = 0.0;
-			self.clipsToBounds = YES;
+			if (_showsShadows) {
+				self.layer.shadowOpacity = 0.0;
+				self.layer.shadowRadius = 0.0;
+				self.clipsToBounds = YES;
+			}
 		}
 	}
 }
@@ -375,6 +379,7 @@ void *TURecipientsSelectionContext = &TURecipientsSelectionContext;
 {
     _showsAddButton = YES;
     _showsBottomBorder = YES;
+	_showsShadows = YES;
     _animatedRecipientsInAndOut = YES;
     _validRecipientBackgroundImages = [NSMutableDictionary new];
 	_invalidRecipientBackgroundImages = [NSMutableDictionary new];

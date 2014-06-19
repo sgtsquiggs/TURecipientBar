@@ -92,6 +92,12 @@
  */
 @property (nonatomic) BOOL showsBottomBorder;
 
+/** Whether the layer shadows should be hidden.
+ 
+ The display layer adds a shadow during search, this boolean allows them to be hidden.
+ */
+@property (nonatomic) BOOL showsShadows;
+
 /** Whether adding and removing recipients should be animated.
  
  Hint: they should. This is turned on by defualt.
