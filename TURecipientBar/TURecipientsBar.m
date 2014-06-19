@@ -706,6 +706,7 @@ void *TURecipientsSelectionContext = &TURecipientsSelectionContext;
 
 - (void)_scrollToBottomAnimated:(BOOL)animated
 {
+	if (self.bounds.size.height > self.contentSize.height) return;
     [self setContentOffset:CGPointMake(0.0, self.contentSize.height - self.bounds.size.height) animated:animated];
 }
 
